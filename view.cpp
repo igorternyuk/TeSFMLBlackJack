@@ -37,7 +37,9 @@ void iat_bj::View::run()
     while(m_window.isOpen())
     {
         userInputPhase();
-        drawingPhase();
+        if(m_haveToDraw)
+            drawingPhase();
+        m_window.display();
     }
     m_bgm.stop();
 }
@@ -158,15 +160,11 @@ void iat_bj::View::userInputPhase()
 
 void iat_bj::View::drawingPhase()
 {
-    if(m_haveToDraw)
-    {
-        m_window.clear(sf::Color(30, 174, 124));
-        drawCards();
-        drawTitleAndRoundsNumber();
-        drawButtons();
-        m_window.display();
-        m_haveToDraw = false;
-    }
+    m_window.clear(m_bgColor);
+    drawCards();
+    drawTitleAndRoundsNumber();
+    drawButtons();
+    m_haveToDraw = false;
 }
 
 void iat_bj::View::drawButtons() const

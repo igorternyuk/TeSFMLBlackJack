@@ -40,6 +40,7 @@ class View: public ModelListener
         };
         std::shared_ptr<ConstantModelInterface> m_spConstantModel;
         std::shared_ptr<Controller> m_spController;
+        const sf::Color m_bgColor{sf::Color(30, 174, 124)};
         const std::string WINDOW_TITLE{"TeBlackJack"};
         const std::string PATH_TO_FONT{"resources/fonts/BRLNSR.TTF"};
         const std::string PATH_TO_BACKGROUND_MUSIC{"resources/sounds/bgm_casino.ogg"};

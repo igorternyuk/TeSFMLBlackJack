@@ -6,9 +6,7 @@
 
 iat_bj::Card::Card(Card::Rank rank, Card::Suit suit, bool isFaceUp):
     rank_{rank}, suit_{suit}, isFaceUp_{isFaceUp}
-{
-
-}
+{}
 
 int iat_bj::Card::getValue() const noexcept
 {
@@ -32,30 +30,20 @@ std::string iat_bj::Card::toString() const noexcept
     {
         switch(rank_)
         {
+            case Rank::JACK:
+                ss << "J";
+                break;
+            case Rank::QUEEN:
+                ss << "Q";
+                break;
+            case Rank::KING:
+                ss << "K";
+                break;
             case Rank::ACE:
                 ss << "A";
             break;
-            case Rank::TWO:
-            case Rank::THREE:
-            case Rank::FOUR:
-            case Rank::FIVE:
-            case Rank::SIX:
-            case Rank::SEVEN:
-            case Rank::EIGHT:
-            case Rank::NINE:
-            case Rank::TEN:
-                ss << 1 + static_cast<int>(rank_);
-            break;
-            case Rank::JACK:
-                ss << "J";
-            break;
-            case Rank::QUEEN:
-                ss << "Q";
-            break;
-            case Rank::KING:
-                ss << "K";
-            break;
             default:
+                ss << 1 + static_cast<int>(rank_);
                 break;
         }
 

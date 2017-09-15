@@ -21,7 +21,8 @@ namespace iat_bj
             TEN,
             JACK,
             QUEEN,
-            KING
+            KING,
+
         };
 
         enum class Suit
